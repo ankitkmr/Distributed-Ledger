@@ -1,0 +1,40 @@
+Steps to create Blockchain database:
+
+1. Create database blockchain;
+
+2. use blockchain;
+
+3. 
+create table wallet(
+walletID int,
+name varchar(20),
+amount float,
+password varchar(20),
+status varchar(3),
+transactionRank int,
+
+primary key (walletID)
+);
+
+4. 
+create table nodes(
+nodeID int,
+longitude float,
+lattitude float,
+IPaddress varchar(15),
+nodekey varchar(20),
+
+primary key (nodeID)
+);
+
+5. 
+create table transactions(
+transactionID int,
+senderID int,
+receiverID int,
+amount float,
+
+primary key (transactionID),
+foreign key (senderID) references wallet(walletID),
+foreign key (receiverID) references wallet(walletID)
+);

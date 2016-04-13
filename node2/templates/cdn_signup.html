@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome, Please Register Your Node Below</h2>
+
+<h3>Registration Details:</h3>
+<p>
+<form method="POST">
+	<table style="width:20%">
+		<tr>
+			<td>Owner's Name:   </td>
+			<td>{{form.name()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Your GeoLocation:  </td>
+			<td>{{form.location()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Your Password:  </td>
+			<td>{{form.password()}}</td> 
+		</tr>
+	</table>
+
+<p>
+	{{form.register()}}
+</p>
+</form>
+</p>
+
+</br>
+<h4><u><a href='/node'> Go back to Index</a></u></h4>
+</p>
+</body>
+</html>

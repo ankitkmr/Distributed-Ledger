@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome {{session['name']}}, This is your Wallet Home</h2>
+
+<div style="position:absolute; right:0">
+<p><h3 align="center">Transaction Records ::</h3>
+	<table style="width:50%" border="1" cellpadding="5" cellspacing="5">
+		<tr>
+			<th><b>Transaction ID</b></th>
+			<th><b>Receiver's Wallet ID</b></th>
+			<th><b>Amount Sent</b></th>
+		</tr>
+	{% for row in rows %}
+		<tr>
+			<td>{{ row[0] }}</td>
+			<td>{{ row[2] }}</td>
+			<td>{{ row[3] }}</td> 
+		</tr>
+	{% endfor %}
+	</table>
+
+</p>
+</div>
+
+<p><h3>Wallet Details:</h3> </p>
+
+
+</br>
+
+
+<p>	
+<table style="width:18%" border="1" cellpadding="5" cellspacing="5">
+	<tr>
+		<td>Name :</td>
+		<td><b>{{session['name']}}</b></td> 
+	</tr>
+	<tr>
+		<td>WalletID :</td>
+		<td><b>{{session['walletID']}}</b></td> 
+	</tr>  
+	<tr>
+		<td>Amount in Wallet : </td>
+		<td><b>{{session['amount']}} BTC</b></td> 
+	</tr>
+</table>
+</p>
+
+
+
+<p>
+ <form method="POST"><h4>Make a Transaction :  {{form3.refresh()}}</h4> </form>
+	
+	
+
+<form method="POST">
+	<table style="width:20%" border="1" cellpadding="5" cellspacing="5">
+		<tr>
+			<td>Enter Receiver's WalletID:  </td>
+			<td>{{form.receiverID()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Amount to Send: </td>
+			<td>{{form.amount()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Your Password:  </td>
+			<td>{{form.password()}}</td> 
+		</tr>
+	</table>
+
+	<p>
+		{{form.send()}}
+	</p>
+
+</form>
+</p>
+
+<p>
+	</br>
+	<b>{{message}}</b>
+</p>
+</br>
+</br>
+</br>
+<form method="POST">
+		{{form2.logout()}}
+</form>
+</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome, Please Sign Up Below</h2>
+
+<h3>Sign Up Details:</h3>
+<p>
+<form method="POST">
+	<table style="width:20%" cellpadding="5" cellspacing="5">
+		<tr>
+			<td>Enter your Name:   </td>
+			<td>{{form.name()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Your Password:  </td>
+			<td>{{form.password()}}</td> 
+		</tr>
+	</table>
+
+<p>
+	{{form.signup()}}
+</p>
+</form>
+</p>
+
+</br>
+<h4><u><a href='/'> Go back to Index</a></u></h4>
+</p>
+</body>
+</html>

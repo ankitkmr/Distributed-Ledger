@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome {{session['name']}}, This is your Miner Account Home</h2>
+
+<h3>Miner Account Details:</h3>
+<p>	
+<table style="width:18%">
+	<tr>
+		<td>Name :</td>
+		<td><b>{{session['name']}}</b></td> 
+	</tr>
+	<tr>
+		<td>AccountType: </td>
+		<td><b>{{session['accountType'].capitalize()}}</b></td> 
+	</tr> 
+	<tr>
+		<td>MinerID :</td>
+		<td><b>{{session['minerID']}}</b></td> 
+	</tr>
+	<tr>
+		<td>WalletID :</td>
+		<td><b>{{session['walletID']}}</b></td> 
+	</tr>
+	<tr>
+		<td>Amount in Wallet : </td>
+		<td><b>{{session['amount']}} BTC</b></td> 
+	</tr>
+</table>
+</p>
+
+<p>
+ <form method="POST"><h4>Start Mining :  {{form.refresh()}}</h4> </form>
+	
+	
+
+<form method="POST">
+	<table style="width:20%">
+		<tr>
+			<td>Enter Receiver's WalletID:  </td>
+			<td>{{form.receiverID()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Amount to Send: </td>
+			<td>{{form.amount()}}</td> 
+		</tr>
+		<tr>
+			<td>Enter Your Password:  </td>
+			<td>{{form.password()}}</td> 
+		</tr>
+	</table>
+
+	<p>
+		{{form.send()}}
+	</p>
+
+</form>
+</p>
+
+<p>
+	</br>
+	<b>{{message}}</b>
+</p>
+</br>
+</br>
+</br>
+<form method="POST">
+		{{form2.logout()}}
+</form>
+</p>
+</body>
+</html>
